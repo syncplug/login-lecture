@@ -13,5 +13,6 @@ app.set("view engine", "ejs")
 
 //미들웨어
 app.use("/", homeRouter);
+app.use(express.static(`${__dirname}/src/public`));
 
-module.exports = app; 
+module.exports = app;
