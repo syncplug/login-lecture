@@ -1,7 +1,8 @@
 //모듈
 const express = require("express");
-const { connected } = require("process");
 const app = express();
+//var bodyParser = require('body-parser')
+
 
 
 //라우팅
@@ -12,7 +13,10 @@ app.set("views", "./src/views")
 app.set("view engine", "ejs")
 
 //미들웨어
-app.use("/", homeRouter);
 app.use(express.static(`${__dirname}/src/public`));
+app.use(express.json()); 
+app.use(express.urlencoded( {extended : false } ));
 
-module.exports = app;
+app.use("/", homeRouter);
+
+module.exports = app; 
