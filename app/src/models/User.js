@@ -19,9 +19,13 @@ class User {
     return {success: false, msg: "해당 아이디가 없습니다."}
   }
 
-  register() { 
-  const response = UserStorage.save(this.body);
-  return response;
+  async register() { 
+    try{  
+      const response = await UserStorage.save(this.body);
+      return response; 
+    } catch (err) {
+      return {success: false, msg: err};
+    }
   }
 
 }
