@@ -11,7 +11,11 @@ function register(){
   if(!id.value){
     return alert("아이디를 입력해 주십시오")
   }
-  
+
+  if(!pw.value){
+    return alert("비밀번호를 입력해 주십시오")
+  }
+
   if(pw.value !== confirmPw.value){
     return alert("비밀번호가 일치하지 않습니다.")
   }

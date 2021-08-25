@@ -1,8 +1,8 @@
 //모듈
 const express = require("express");
 const app = express();
-//var bodyParser = require('body-parser')
-
+const dotenv = require("dotenv")
+dotenv.config();
 
 
 //라우팅
