@@ -11,7 +11,7 @@ class UserStorage {
       db.query(query,[id], (err, data) => {
         if(err) reject(`${err}`);
         //console.log(data[0])
-        resolve(data[0]);
+        else resolve(data[0]); //else 꼭 기억
       })
     })
   }
@@ -23,11 +23,10 @@ class UserStorage {
       db.query(query,[userInfo.id, userInfo.name, userInfo.pw], (err, data) => {
         if(err) reject(`${err}`);
         //console.log(data[0])
-        resolve({ succes:true });
+        else resolve({ succes:true });
       })
     })
   }
 }
-
 
 module.exports = UserStorage;  
